@@ -102,7 +102,7 @@ extern "C" {
 
 
     FloatArray melFrequencySpectrum(GistSwiftWrapper* gistSwift) {
-        std::vector<float> vec = gistSwift->gist.melFrequencySpectrum();
+        std::vector<float> vec = gistSwift->gist.getMelFrequencySpectrum();
         FloatArray result = {
             .numElements =  static_cast<int>(vec.size()),
             .elements = (float *)malloc(sizeof(float) * vec.size())
@@ -116,7 +116,7 @@ extern "C" {
     }
 
     FloatArray melFrequencyCepstralCoefficients(GistSwiftWrapper* gistSwift) {
-        std::vector<float> vec = gistSwift->gist.melFrequencyCepstralCoefficients();
+        std::vector<float> vec = gistSwift->gist.getMelFrequencyCepstralCoefficients();
 
         FloatArray result = {
             .numElements =  static_cast<int>(vec.size()),
